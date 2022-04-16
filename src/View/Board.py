@@ -12,5 +12,4 @@ class Board(object):
         self.surface.fill(background_board)
         for drawable in args:
             drawable.draw_on(self.surface)
-
         pygame.display.update()

@@ -15,6 +15,9 @@ class Population(object):
     def reset_generation(self):
         return [[DEAD for y in xrange(self.height)] for x in xrange(self.width)]
 
+    def clear_population(self):
+        self.generation = [[DEAD for y in xrange(self.height)] for x in xrange(self.width)]
+
     def handle_mouse(self):
         buttons = pygame.mouse.get_pressed()
         if not any(buttons):
