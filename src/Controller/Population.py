@@ -13,10 +13,10 @@ class Population(object):
         self.generation = self.reset_generation()
 
     def reset_generation(self):
-        return [[DEAD for y in xrange(self.height)] for x in xrange(self.width)]
+        return [[DEAD for _ in xrange(self.height)] for _ in xrange(self.width)]
 
     def clear_population(self):
-        self.generation = [[DEAD for y in xrange(self.height)] for x in xrange(self.width)]
+        self.generation = [[DEAD for _ in xrange(self.height)] for _ in xrange(self.width)]
 
     def handle_mouse(self):
         buttons = pygame.mouse.get_pressed()
@@ -34,7 +34,9 @@ class Population(object):
             size = (self.box_size, self.box_size)
             position = (x * self.box_size, y * self.box_size)
             color = (0, 128, 0)
-            pygame.draw.rect(surface, color, pygame.locals.Rect(position, size), width=0, border_radius=5, border_top_left_radius=-1, border_top_right_radius=-1, border_bottom_left_radius=-1, border_bottom_right_radius=-1)
+            pygame.draw.rect(surface, color, pygame.locals.Rect(position, size), width=0, border_radius=5,
+                             border_top_left_radius=-1, border_top_right_radius=-1,
+                             border_bottom_left_radius=-1, border_bottom_right_radius=-1)
 
     def alive_cells(self):
         for x in range(len(self.generation)):

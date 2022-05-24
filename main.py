@@ -11,6 +11,7 @@ parser.add_argument('-wi', dest='width', type=int)
 
 args = parser.parse_args()
 
+
 def draw_menu():
     pygame.init()
     surface = pygame.display.set_mode((1200, 1000))
@@ -28,11 +29,12 @@ def draw_menu():
 def make_popup():
     print("TEST")
 
+
 def start_the_game():
     game = game_of_life(args.height, args.width)
     game.run()
     pygame.quit()
 
+
 if __name__ == "__main__":
     draw_menu()
-

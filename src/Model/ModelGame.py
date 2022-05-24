@@ -9,6 +9,7 @@ from src.Controller.Population import Population
 class game_of_life(object):
 
     def __init__(self, width, height, cell_size=10):
+        self.started = None
         pygame.init()
         self.board = Board(width * cell_size, height * cell_size)
         self.fps_clock = pygame.time.Clock()
